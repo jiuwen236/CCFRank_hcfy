@@ -13,7 +13,8 @@ var Abbr2Rank = { "TOCS": "A", "TOS": "A", "TCAD": "A", "TC": "A", "TPDS": "A", 
 //     }
 //     Full2Rank[newKey] = newValue
 // }
-let replace2 = { "networks": "netw\\.", "systems": "syst\\.", "concurrency": "concu\?\\.", "computation": "comp\\.", "practice": "prac\\.", "experience": "exp\\.", "journal": "j\\.", "architecture": "archit\\.", "knowledge": "knowl\\.", "transactions": "trans\\.", "and": "&" }
+let replace2 = { "networks": "netw\\.", "systems": "syst\\.", "concurrency": "concu\?\\.", "computation": "comp\\.", "practice": "prac\\.", "experience": "exp\\.", "journal": "j\\.", "architecture": "archit\\.", "knowledge": "knowl\\.", "transactions": "trans\\.", "transactions": "transaction", "and": "&" }
+// console.log(Object.keys(Full2Rank).length)
 for (let replaceKey in replace2) {
     for (let key in Full2Rank) {
         let newValue = Full2Rank[key]
@@ -22,10 +23,12 @@ for (let replaceKey in replace2) {
         Full2Rank[newKey] = newValue
     }
 }
+// console.log(Object.keys(Full2Rank).length)
 let del = [""]
 for (let key of del) {
     delete Full2Rank[key]
 }
+// console.log(Object.keys(Full2Rank).length)
 
 function find_full(target, resource) {
     let count = 0
