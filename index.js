@@ -38,7 +38,7 @@ function find_full(target, resource) {
     // const regex = new RegExp(`(?<=^|[.,，\n])\\s*\\d*\\s*${target}`, 'g');
     // const regex = new RegExp(`(?<=^|[.,，\n])(?:\s|\d|acm|ieee|ieee\/acm|th|st|nd|rd|(?![^\s\dacmieethstndrd]))${target}`, 'g');
     // const regex = new RegExp(`(?<=^|[.,，\n])(?:(?:\s|\d|acm|ieee|\/acm|th|st|nd|rd)+)*${target}`, 'g');
-    const regex = new RegExp(`(?<=^|[.,，"”\n]|//)(\\s|\\d|acm|ieee|\\/acm|\\/ieee|th|st|nd|rd|the|in|proceedings?|of|annual)*?${target}(?! and)`, 'g')
+    const regex = new RegExp(`(?<=^|[.,，"”\n]|//)(\\s|\\d|acm|ieee|\\/acm|-acm|\\/ieee|th|st|nd|rd|the|in|proceedings?|of|annual|to|appear)*?${target}(?! and)`, 'g')
 
     // 搜索所有匹配项
     const matches = resource.match(regex)
@@ -55,7 +55,7 @@ function find_abbr(target, resource) {
     let count = 0
 
     // 以特定字符开头
-    const regex = new RegExp(`(?<=^|[.,，"”\n]|//)(\\s|\\d|acm|Acm|ACM|ieee|IEEE|\\/acm|\\/ACM|\\/ieee|\\/IEEE|th|st|nd|rd|the|The|in|In|[pP]roceedings?|of|[aA]nnual)*?${target}(?![a-zA-Z])(?! [a-zA-Z])`, 'g')
+    const regex = new RegExp(`(?<=^|[.,，"”\n]|//)(\\s|\\d|acm|Acm|ACM|ieee|IEEE|\\/acm|-ACM|\\/ACM|\\/ieee|\\/IEEE|th|st|nd|rd|the|The|in|In|[pP]roceedings?|of|[aA]nnual|to|appear)*?${target}(?![a-zA-Z])(?! [a-zA-Z])`, 'g')
 
     // 搜索所有匹配项
     const matches = resource.match(regex)
